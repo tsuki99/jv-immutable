@@ -52,10 +52,9 @@ public final class Car {
 
     public Car addWheel(Wheel newWheel) {
         List<Wheel> updatedWheels = new ArrayList<>(wheels);
-        updatedWheels.add(newWheel);
+        updatedWheels.add(newWheel.clone());
 
-        Car newCar = new Car(year, color, updatedWheels, engine);;
-        return newCar;
+        return new Car(year, color, updatedWheels, engine);
     }
 
     private List<Wheel> cloneWheels(List<Wheel> wheels) {
